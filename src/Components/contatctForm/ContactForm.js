@@ -11,9 +11,12 @@ const ContactForm = ({ isThereContact, addNewContact }) => {
     setNumber("");
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    name === "name" ? setName(value) : setNumber(value);
+  const changeName = (e) => {
+    setName(e.target.value);
+  };
+
+  const changeNumber = (e) => {
+    setNumber(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -31,7 +34,7 @@ const ContactForm = ({ isThereContact, addNewContact }) => {
         Name:
         <input
           className={s.input}
-          onChange={handleChange}
+          onChange={changeName}
           type="text"
           name="name"
           value={name}
@@ -45,7 +48,7 @@ const ContactForm = ({ isThereContact, addNewContact }) => {
         Number:
         <input
           className={s.input}
-          onChange={handleChange}
+          onChange={changeNumber}
           type="tel"
           name="number"
           value={number}
