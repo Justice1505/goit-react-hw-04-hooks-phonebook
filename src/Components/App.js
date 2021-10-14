@@ -29,9 +29,10 @@ const App = () => {
     name === "filter" && setFilter(value);
   };
 
-  const removeContact = (e) => {
-    const id = e.target.id;
-    setСontactsList(contactsList.filter((contact) => contact.id !== id));
+  const removeContact = (idx) => {
+    setСontactsList((contactsList) => {
+      return contactsList.filter((contact) => contact.id !== idx);
+    });
   };
 
   const findContact = (e) => {
